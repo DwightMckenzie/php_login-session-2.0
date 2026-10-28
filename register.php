@@ -1,15 +1,15 @@
 <?php
 declare(strict_types=1);
 
-require 'includes/session.php';
-require 'includes/auth.php';
+require 'helpers/session.php';
+require 'helpers/auth.php';
 require 'classes/Database.php';
 
 start_secure_session();
 
 // Logged-in users don't need to register
 if (isLoggedIn()) {
-    header('Location: page-1.php');
+    header('Location: login.php');
     exit;
 }
 

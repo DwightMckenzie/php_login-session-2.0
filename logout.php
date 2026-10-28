@@ -1,7 +1,7 @@
 <?php
   declare(strict_types=1);
 
-  require 'includes/session.php';
+  require 'helpers/session.php';
 
   start_secure_session();
 
