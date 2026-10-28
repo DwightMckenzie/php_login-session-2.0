@@ -5,7 +5,7 @@
    */
 
   // application directory
-  $folder = "php_secured-session-1.0";
+  $folder = "php_secured-session-2.0";
 
   /** 
    * redirect to set parameter

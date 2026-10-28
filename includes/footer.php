@@ -57,6 +57,5 @@
 		<!-- <script src="test/test-scripts.js" type="text/javascript"></script> -->
 		<!-- <script src="js/profile.js" type="text/javascript"></script> -->
 		<!-- <script src="js/app.js" type="text/javascript"></script> -->
-		<script src="./assets/js/script.js" type="text/javascript"></script>
   </body>
 </html>

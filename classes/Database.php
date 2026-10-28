@@ -1,9 +1,7 @@
 <?php
 
     /**
-     * USed with the config file out side of the root 
-     * 
-     * 
+     * Used with the config file out side of the root
      */
     declare(strict_types=1);
 

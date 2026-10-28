@@ -8,3 +8,15 @@
 	justify-content:flex-end;
 	align-items: center;
 }
+
+
+
+.btn-icon.btn {
+    padding: 1px 5px;
+}
+
+.current-user i {
+    color: #28a745;
+    font-size: 10px;
+    vertical-align: middle;
+}

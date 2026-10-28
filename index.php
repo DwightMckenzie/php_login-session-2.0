@@ -7,11 +7,15 @@
 	// start session
 	session_start();
 
-
-  // require fro the login info
-  require 'includes/url.php';
-	require 'includes/auth.php';
-
+	// require fro the login info
+	require 'helpers/url.php';
+	require 'helpers/auth.php';
+	
+	
 	isLoggedIn();
+		
+	header('Location: login.php');
+	exit;
+
 
 ?>
