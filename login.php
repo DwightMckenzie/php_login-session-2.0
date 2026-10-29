@@ -1,16 +1,13 @@
 <?php
 	declare(strict_types=1);
 
-	// commented here
-	// ini_set('display_errors', '1');
-	// error_reporting(E_ALL);
-
 	require 'helpers/session.php';
 	require 'helpers/auth.php';
 	require 'classes/Database.php';
 
 	start_secure_session();
-
+	
+	// check if logged in 
 	if (isLoggedIn()) {
 		header('Location: login.php');
 		exit;
@@ -23,23 +20,32 @@
 	const DUMMY_HASH = '$2y$10$ST3ZUvriKFCPeR8hGRDzwOvt8TPFnDPMvXccJ5nyh9pPd9jZ2jK5K';
 
 	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+		// if certificate fails error else con$sqltinure
 
 		if (!csrf_valid($_POST['csrf'] ?? null)) {
 			$error = 'Your session expired. Please try again.';
 		} else {
+		
 			$username = trim($_POST['username'] ?? '');
 			$password = $_POST['password'] ?? '';
 
+			// if user name or password fields empty error else continue
 			if ($username === '' || $password === '') {
 				$error = 'Please enter a username and password.';
 			} else {
+				
 				$conn = Database::getConn();
-				$stmt = $conn->prepare('SELECT id, username, password FROM users WHERE username = :u LIMIT 1');
+				$sql = 'SELECT id, username, password
+								FROM users
+								WHERE username = :u
+								LIMIT 1';
+				$stmt = $conn->prepare($sql);
 				$stmt->execute([':u' => $username]);
 				$user = $stmt->fetch();
 
 				$valid = false;
 
+				// validate user continue else use dummy hash 
 				if ($user) {
 					if (password_verify($password, $user['password'])) {
 						$valid = true;
@@ -56,6 +62,7 @@
 					password_verify($password, DUMMY_HASH); // timing equalization
 				}
 
+				// if valid direct tp dashboard
 				if ($valid) {
 					session_regenerate_id(true); // prevent session fixation
 

@@ -11,7 +11,7 @@
   if (ini_get('session.use_cookies')) {
     $p = session_get_cookie_params();
     setcookie(session_name(), '', [
-      'expires'  => time() - 42000,
+      'expires'  => time() - 42000, // 11 hours
       'path'     => $p['path'],
       'domain'   => $p['domain'],
       'secure'   => $p['secure'],

@@ -11,9 +11,10 @@
 	require 'helpers/url.php';
 	require 'helpers/auth.php';
 	
-	
+	// check if logged in
 	isLoggedIn();
-		
+
+	// redirect to
 	header('Location: login.php');
 	exit;
 

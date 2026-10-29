@@ -31,6 +31,3 @@
 		</div>
 	</div>
 </div><!--End .conatiner -->
-
-<!-- main container -->
-<div class="container">

@@ -1,6 +1,7 @@
 <?php
   /**
    * Dyanaimc URL functions
+   * helps avoid entering file paths directly
    * 
    */
 
@@ -23,18 +24,8 @@
       $protocol = 'http';
     }
 
-    // header("Location: $protocol://" . $_SERVER['HTTP_HOST'] . "/salary-beta-3.1" . $path); // ORIGINAL
     header("Location: $protocol://" . $_SERVER['HTTP_HOST'] . "/" . $folder . "/" . $path);
     exit;
-
-    /**
-     * other samples
-     * 
-     */
-    // header('Location: http://localhost/salary-weekly-exp-1.1');
-    // header('Location: '.$_SERVER['PHP_SELF']);
-    // header('Location:'.$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']);
-
   }
 
   /**
@@ -47,7 +38,7 @@
     exit;
   }
 
-  /**
+	/**
    * for basic url string no redirects or refresh
    * 
    */

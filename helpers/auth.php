@@ -1,9 +1,7 @@
 <?php
 
   /**
-   * Revised by AI
-   * 
-   * 
+   * Authenticate user and the activity
    */
 
   declare(strict_types=1);
@@ -34,40 +32,5 @@
 
     $_SESSION['last_activity'] = time();
   }
-
-
-
-  /**
-   * Return the authentication status 
-   * 
-   * @return boolean True if a user is logged in, false otherwise
-   * 
-   *
-
-  function isLoggedIn() {
-    // check login normally
-    // if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == '') {
-    if (!isset($_SESSION['logged_in']) && $_SESSION['id'] == null) {
-      // header('Location: login.php?notice="Please login first"');
-      header('Location: login.php');
-      // header('Location: 404.php');
-      die();
-    }
-
-    // if (isset($_GET['status']) && $_GET['status'] == 'logged-in') {
-    //   header('Location: hello.php');
-    //   die();
-    // }
-
-    // trying to access page directly without loggin in
-    // if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == '') {
-    //   header('Location: login.php?notice="Please login"');
-    //   die();   
-    // }
-
-  }
-
-  */
-
 
 ?>
